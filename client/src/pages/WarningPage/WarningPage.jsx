@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { actionGetAllWarnings } from 'store/actions';
 
 import DataTable from 'components/DataTable/DataTable';
 
@@ -8,17 +12,23 @@ import setting1 from 'assets/Icons/setting1.png';
 
 import styles from './index.module.css';
 
-const data = [
-  {
-    id: 1, content: 'Cảnh báo người lạ', location: 'H56213454', serial: 'DEF456-fds789', level: 'High', playback: 'Playbacks',
-  },
-];
-
 const tableHead = {
   content: 'Nội dung', location: 'Khu vực', serial: 'Serial', level: 'Mức độ', playback: 'Playbacks',
 };
 
 function WarningPage() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.Warning);
+
+  const settingWarningButtonHandle = () => {
+    navigate('/settingwarning');
+  };
+
+  useEffect(() => {
+    dispatch(actionGetAllWarnings());
+  }, []);
+
   return (
     <>
       <div className={styles.FunctionalContainer}>
@@ -34,14 +44,14 @@ function WarningPage() {
           Xóa thông báo
         </div>
 
-        <div className={styles.IconContainer}>
+        <button type="button" onClick={settingWarningButtonHandle} className={styles.IconContainer}>
           <img src={setting1} alt="setting1" />
 
           Cài đặt cảnh báo
-        </div>
+        </button>
       </div>
 
-      <DataTable title="Lịch sử cảnh báo" data={data} tableHead={tableHead} />
+      <DataTable title="Lịch sử cảnh báo" data={data.warnings} tableHead={tableHead} loading={data.loading} />
     </>
   );
 }
