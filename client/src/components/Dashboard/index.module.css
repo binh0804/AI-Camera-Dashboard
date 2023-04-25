@@ -45,7 +45,7 @@
   margin-left: 35px;
   margin-right: 25px;
 }
-
+/*
 .DashboardItems a {
   position: relative;
   z-index: 0;
@@ -67,6 +67,7 @@
 .DashboardItems a.active {
   color: white;
 }
+
 .DashboardItems a.active::before {
   content: '';
   position: absolute;
@@ -97,4 +98,4 @@
   100% {
     width: 60%;
   }
-}
+} */
