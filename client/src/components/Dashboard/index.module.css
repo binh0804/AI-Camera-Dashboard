@@ -7,13 +7,23 @@
 }
 
 .DashboardTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 40px;
   margin-bottom: 44px;
 
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
+  gap: 10px;
 }
 
+.DashboardTitle > img {
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  object-fit: cover;
+}
 .DashboardItems {
   display: flex;
   flex-direction: column;
@@ -45,57 +55,3 @@
   margin-left: 35px;
   margin-right: 25px;
 }
-/*
-.DashboardItems a {
-  position: relative;
-  z-index: 0;
-  transition: all 0.3s ease;
-}
-
-.DashboardItems a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0.2em;
-  transform: translateX(20%);
-  background: black;
-  left: 0;
-  bottom: 0;
-  background-image: linear-gradient(to right, #5e42a6, #b74e91);
-}
-
-.DashboardItems a.active {
-  color: white;
-}
-
-.DashboardItems a.active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 80%;
-
-  z-index: -1;
-  transform: translate(10%, 10%);
-  border-radius: 10px;
-  background-color: #ab92eb;
-}
-
-.DashboardItems a:hover {
-  color: white;
-}
-
-.DashboardItems a:not(.active):hover::after {
-  width: 60%;
-  animation: identifier 0.5s;
-}
-
-@keyframes identifier {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 60%;
-  }
-} */

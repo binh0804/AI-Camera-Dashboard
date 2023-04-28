@@ -1,21 +1,25 @@
 .Container {
-  width: 1120px;
-  height: 830px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-
+  border-radius: 8px;
+  padding: 20px;
   background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ContainerDescription {
-  display: flex;
+  width: 100%;
+  display: inline-flex;
+  gap: 0 90px;
 }
 
 .DescriptionItem {
-  width: 240px;
-  height: 120px;
-  margin-right: 90px;
-
+  width: 250px;
+  padding: 20px 0;
   border: 1px solid #363740;
   border-radius: 8px;
   background-color: #fff;
@@ -33,18 +37,21 @@
 }
 
 .ContainerCamera {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 
-  margin-top: 26px;
+  margin-top: 26px; */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 .CameraItem {
-  width: 540px;
   height: 320px;
-  margin: 9px 10px 9px 10px;
-
   border-radius: 8px;
   background-color: #000;
 }
