@@ -28,7 +28,6 @@ jobs:
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-
-
       - name: Build and Push Docker image for client
         uses: docker/build-push-action@v2
         id: docker_build_client
@@ -37,7 +36,7 @@ jobs:
           file: ./client/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ai-camera-dashboard
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/client-ai-camera
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
@@ -52,7 +51,7 @@ jobs:
           file: ./nginx/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ai-camera-dashboard
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nginx-ai-camera
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
