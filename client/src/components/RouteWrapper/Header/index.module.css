@@ -24,10 +24,18 @@
   width: 18px;
 }
 
+.Icon {
+  color: #C5C7CD;
+}
+
+.Icon:hover {
+  color: #3751FF;
+  cursor: pointer;
+}
+
 .Divider {
   height: 32px;
   border: 1px solid rgba(223, 224, 235, 1);
-
 }
 
 .RightContainer {
