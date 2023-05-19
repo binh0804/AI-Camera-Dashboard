@@ -63,6 +63,7 @@ To start the development server and launch the dashboard, run the following comm
 Open your web browser and visit http://localhost:3000 to access the AI Camera Dashboard.
 
 Login with account:
+- Admin
 * Email:
 ```bash
   admin@gmail.com
@@ -70,4 +71,13 @@ Login with account:
 * Password:
 ```bash
   Admin123
+  ```
+- User
+
+```bash
+  hualocson@gmail.com
+  ```
+* Password:
+```bash
+  locson
   ```
