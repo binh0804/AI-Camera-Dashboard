@@ -47,7 +47,9 @@ To run the AI Camera Dashboard locally with Docker, follow these steps:
     git clone https://github.com/binh0804/AI-Camera-Dashboard.git
     ```
 2. Change to the project directory of this project:
-    
+    ```bash
+    cd AI-Camera-Dashboard/
+    ```
 3. Install dependencies:
     ```bash
     docker-compose up -d –build
@@ -72,24 +74,26 @@ To run the AI Camera Dashboard locally with npm, follow these steps:
     ```bash
     npm install
     ```
-To start the development server and launch the dashboard, run the following command:
-  ```bash
-  npm start
-  ```
+4. To start the development server and launch the dashboard, run the following command:
+    ```bash
+    npm start
+    ```
 Open your web browser and visit http://localhost:3000 to access the AI Camera Dashboard.
 ## Usage
 * Login with account Admin :
 
 Email:
+
 ```bash
   admin@gmail.com
-  ```
+```
 Password:
 ```bash
   Admin123
-  ```
-* Login with account User :
+```
 
+
+* Login with account User :
 Email:
 ```bash
   hualocson@gmail.com
