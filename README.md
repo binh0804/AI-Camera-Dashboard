@@ -7,8 +7,8 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation with Docker](#installation)
-- [Installation with npm](#installation)
+- [Installation with Docker](#installation-with-docker)
+- [Installation with npm](#installation-with-npm)
 - [Usage](#usage)
 
 ---
@@ -94,6 +94,7 @@ Password:
 
 
 * Login with account User :
+
 Email:
 ```bash
   hualocson@gmail.com
