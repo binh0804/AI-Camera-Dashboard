@@ -7,7 +7,8 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation](#installation)
+- [Installation with Docker](#installation)
+- [Installation with npm](#installation)
 - [Usage](#usage)
 
 ---
@@ -71,31 +72,29 @@ To run the AI Camera Dashboard locally with npm, follow these steps:
     ```bash
     npm install
     ```
-## Usage
-
 To start the development server and launch the dashboard, run the following command:
   ```bash
   npm start
   ```
-
 Open your web browser and visit http://localhost:3000 to access the AI Camera Dashboard.
+## Usage
+* Login with account Admin :
 
-Login with account:
-- Admin
-* Email:
+Email:
 ```bash
   admin@gmail.com
   ```
-* Password:
+Password:
 ```bash
   Admin123
   ```
-- User
+* Login with account User :
 
+Email:
 ```bash
   hualocson@gmail.com
   ```
-* Password:
+Password:
 ```bash
   locson
   ```
