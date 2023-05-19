@@ -37,9 +37,27 @@ AI Camera Dashboard là một ứng dụng web được xây dựng bằng React
 
 ![Project Image](./assets/Contact-page.png)
 ---
-## Installation
+## Installation with Docker
 
-To run the AI Camera Dashboard locally, follow these steps:
+To run the AI Camera Dashboard locally with Docker, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/binh0804/AI-Camera-Dashboard.git
+    ```
+2. Change to the project directory of this project:
+    
+3. Install dependencies:
+    ```bash
+    docker-compose up -d –build
+    ```
+Open your web browser and visit http://localhost:81 to access the AI Camera Dashboard with Docker.
+
+Alternatively, you can install this project with npm following below tutorial.
+
+## Installation with npm
+
+To run the AI Camera Dashboard locally with npm, follow these steps:
 
 1. Clone the repository:
     ```bash
