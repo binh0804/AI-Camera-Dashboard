@@ -6,7 +6,10 @@ import { actionGetAllCameras } from 'store/actions';
 import DataTable from 'components/DataTable/DataTable';
 
 const tableHead = {
-  serial: 'Serial', homeId: 'Home ID', connection: 'Connection', level: 'Security Level',
+  serial: 'Serial',
+  homeId: 'Home ID',
+  connection: 'Connection',
+  level: 'Security Level',
 };
 
 function CamerasPage() {
@@ -23,7 +26,12 @@ function CamerasPage() {
   }, []);
 
   return (
-    <DataTable title="Camera" data={transformedData} tableHead={tableHead} loading={data.loading} />
+    <DataTable
+      title="Camera"
+      data={transformedData}
+      tableHead={tableHead}
+      loading={data.loading}
+    />
   );
 }
 
