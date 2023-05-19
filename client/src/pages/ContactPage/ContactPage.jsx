@@ -6,9 +6,9 @@ function ContactPage() {
   return (
     <div className={styles.Container}>
       <div className={styles.Header}>
-        <p className={styles.HeadingText}>Nhóm 07 - CCPM</p>
+        <p className={styles.HeadingText}>Nhóm 07 - Công Cụ và Môi Trường Phát Triển Phần Mềm</p>
         <p className={styles.SubHeadingText}>
-          Mọi thắc mắc xin liên hiện Phạm Phúc Bình
+          Danh sách thành viên nhóm
         </p>
       </div>
 
