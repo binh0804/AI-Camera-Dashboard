@@ -52,7 +52,7 @@ To run the AI Camera Dashboard locally with Docker, follow these steps:
     ```
 3. Install dependencies:
     ```bash
-    docker-compose up -d –build
+    docker-compose up -d --build
     ```
 Open your web browser and visit http://localhost:81 to access the AI Camera Dashboard with Docker.
 
