@@ -4,6 +4,43 @@ services:
     build: client
     restart: unless-stopped
     container_name: client-container
+    networks:
+      - apinetwork
+    ports:
+      - 3000:3000
+
+  api_server:
+    build: server
+    ports:
+      - 3009:3009
+    restart: unless-stopped
+    container_name: api-server-container
+    environment:
+      - PORT=3009
+      - MONGO_URL=mongodb://mongo_db:27017/test
+    depends_on:
+      - mongo_db
+    networks:
+      - apinetwork
+
+  mongo_db:
+    image: mongo
+    restart: unless-stopped
+    container_name: mongo-container
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongodb/data:/data/db
+    networks:
+      - apinetwork
+
+  mongo_seed:
+    build: mongodb
+    container_name: mongo-seed-container
+    depends_on:
+      - mongo_db
+    networks:
+      - apinetwork
 
   nginx:
     build: nginx
@@ -11,7 +48,13 @@ services:
     container_name: nginx-container
     ports:
       - 81:80
+    networks:
+      - apinetwork
     environment:
       - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
-      - CLIENT_HOST=client
-      - CLIENT_PORT=3000
+    depends_on:
+      - client
+
+networks:
+  apinetwork:
+    driver: bridge

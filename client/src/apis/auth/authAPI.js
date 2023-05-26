@@ -7,7 +7,6 @@ export default {
     const path = `${endPoint}/login`;
 
     const response = await axiosClient.post(path, payload);
-
     return response.data;
   },
 
