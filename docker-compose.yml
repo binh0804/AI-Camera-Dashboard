@@ -4,6 +4,35 @@ services:
     build: client
     restart: unless-stopped
     container_name: client-container
+    environment:
+      - REACT_APP_API_URL=http://localhost:3009
+    networks:
+      - apinetwork
+
+  api-server:
+    build: server
+    ports:
+      - 3009:3009
+    restart: unless-stopped
+    container_name: api-server-container
+    environment:
+      - PORT:3009
+      - MONGO_URL:mongodb://mongo_db:27017
+    depends_on:
+      - mongo_db
+    networks:
+      - apinetwork
+
+  mongo_db:
+    image: mongo:latest
+    restart: unless-stopped
+    container_name: mongo-container
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data:/data/db
+    networks:
+      - apinetwork
 
   nginx:
     build: nginx
@@ -11,7 +40,15 @@ services:
     container_name: nginx-container
     ports:
       - 81:80
+    networks:
+      - apinetwork
     environment:
       - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
       - CLIENT_HOST=client
       - CLIENT_PORT=3000
+    depends_on:
+      - client
+
+networks:
+  apinetwork:
+    driver: bridge
