@@ -24,7 +24,7 @@ mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
   })
-  .then(() => console.log('Connected to MongoDb'))
+  .then(() => console.log(`Connected to MongoDb  ${process.env.MONGO_URL}`))
   .catch((err) => console.log(err));
 
 app.use('/api/auth', authRouter);
@@ -34,6 +34,9 @@ app.use('/api', locationRouter);
 app.use('/api', warningRouter);
 app.use('/api', statisticRouter);
 app.use('/api', videoRouter);
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
